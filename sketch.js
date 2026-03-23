@@ -1,6 +1,7 @@
 // Global Variables
 let  myInput;
 let myButton;
+let randomNumber;
 
 //------- below are setup and draw functions----------------
 //------- They ALWAYS have to be there --------------------
@@ -11,6 +12,8 @@ function setup() {
   myButton = createButton('guess number');
   myButton.position(20, 175)
   myButton.mousePressed(submitGuess)
+  randomNumber = Math.ceil(Math.random()*100);
+  console.log(randomNumber)
 }
 function draw() {
   background("#003049");
@@ -29,6 +32,13 @@ function submitGuess(){
   //a variable called their guess.
   let theirGuess = myInput.value();
   //console.log is a nice way to 'see under the hood'
-  console.log(theirGuess)
+  if(theirGuess > randomNumber){
+    //true block of the if block
+    console.log("Too High")
+  }else if(theirGuess < randomNumber){
+    console.log("Too Low")
+  }else{
+    console.log("You got it")
+  }
   
 }
