@@ -3,6 +3,7 @@ let  myInput;
 let myButton;
 let randomNumber;
 let myImage;
+let feedback = "";//This will hold "too high" or "too Low"
 
 //------- below are setup and draw functions----------------
 //------- They ALWAYS have to be there --------------------
@@ -28,6 +29,8 @@ function draw() {
   image(myImage,200,150,120,150)
   textSize(14);
   text("I have thought of a number between 1-100",20,140);
+  textSize(28)
+  text(feedback,20,250)
 }
 //--------------- The Functions below are ones that I made------
 function submitGuess(){
@@ -37,11 +40,11 @@ function submitGuess(){
   //console.log is a nice way to 'see under the hood'
   if(theirGuess > randomNumber){
     //true block of the if block
-    console.log("Too High")
+    feedback = "Too High"
   }else if(theirGuess < randomNumber){
-    console.log("Too Low")
+    feedback = "Too Low"
   }else{
-    console.log("You got it")
+    feedback = "You got it"
   }
   
 }
