@@ -2,6 +2,7 @@
 let  myInput;
 let myButton;
 let randomNumber;
+let myImage;
 
 //------- below are setup and draw functions----------------
 //------- They ALWAYS have to be there --------------------
@@ -13,7 +14,8 @@ function setup() {
   myButton.position(20, 175)
   myButton.mousePressed(submitGuess)
   randomNumber = Math.ceil(Math.random()*100);
-  console.log(randomNumber)
+  console.log(randomNumber);
+  myImage = loadImage("bBarker.png")
 }
 function draw() {
   background("#003049");
@@ -23,6 +25,7 @@ function draw() {
   fill("#FDF0D5");
   textSize(24);
   text("High Low Game",100,50);
+  image(myImage,200,150,120,150)
   textSize(14);
   text("I have thought of a number between 1-100",20,140);
 }
