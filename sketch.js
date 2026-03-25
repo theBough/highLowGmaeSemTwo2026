@@ -29,8 +29,8 @@ function draw() {
   image(myImage,200,150,120,150)
   textSize(14);
   text("I have thought of a number between 1-100",20,140);
-  textSize(28)
-  text(feedback,20,250)
+  textSize(12)
+  text(feedback,20,225)
 }
 //--------------- The Functions below are ones that I made------
 function submitGuess(){
@@ -40,11 +40,10 @@ function submitGuess(){
   //console.log is a nice way to 'see under the hood'
   if(theirGuess > randomNumber){
     //true block of the if block
-    feedback = "Too High"
+    feedback +=  theirGuess + " >> Too High \n"
   }else if(theirGuess < randomNumber){
-    feedback = "Too Low"
+    feedback += theirGuess + " >> Too Low \n"
   }else{
-    feedback = "You got it"
+    feedback += theirGuess + " >> You got it \n"
   }
-  
 }
