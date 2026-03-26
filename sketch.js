@@ -31,19 +31,31 @@ function draw() {
   text("I have thought of a number between 1-100",20,140);
   textSize(12)
   text(feedback,20,225)
+  
 }
 //--------------- The Functions below are ones that I made------
 function submitGuess(){
   //Go and get what is inside the input box, and save it into
   //a variable called their guess.
   let theirGuess = myInput.value();
-  //console.log is a nice way to 'see under the hood'
+  
+  if(theirGuess == randomNumber){
+    feedback = "YOU GOT !!!!!"
+    ////MAYBE CHANGE PICTURE HERE.
+    return 0;//the function would end here. 
+  }
+  
+  let isClose = Math.abs(randomNumber -  theirGuess)
+  console.log(isClose)
+  //the scope of this variable is LOCAL to this function.
+  if(isClose < 6 ){
+    feedback += " >>You are close.🤏\n"
+  }  
+  
   if(theirGuess > randomNumber){
     //true block of the if block
     feedback +=  theirGuess + " >> Too High \n"
   }else if(theirGuess < randomNumber){
     feedback += theirGuess + " >> Too Low \n"
-  }else{
-    feedback += theirGuess + " >> You got it \n"
   }
 }
